@@ -2,8 +2,8 @@ const express = require('express');
 const apiRoute = express();
 const sheetFunc = require('../Functions/sheetFunction')
 
-apiRoute.get('/sheet-rate/:sheetid', (req, res) => {
-    sheetFunc.postRateSheet(req.params.sheetid,(err,result) => {
+apiRoute.post('/postRate/:type/:event/:sheetid', (req, res) => {
+    sheetFunc.postRateSheet(req.params,(err,result) => {
         if(err) {
             return res.status(500).send('Internal Server Error')
         }

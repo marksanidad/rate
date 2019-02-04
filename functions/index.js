@@ -19,7 +19,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get(['/sheet-rate/:sheetid'],appRoute);
+app.post(['/postRate/:type/:event/:sheetid'],appRoute);
 
 const rate = functions.https.onRequest(app);
 
